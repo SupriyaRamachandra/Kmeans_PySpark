@@ -10,9 +10,9 @@ from pyspark import SparkConf, SparkContext
 conf = SparkConf().setMaster("local")
 sc = SparkContext.getOrCreate(conf=conf)
 from scipy.spatial import distance 
-dataset_path = 'C:/Users/pratik/Desktop/Big Data Mining/Assignment 2/data.txt'
-centroid_set1_path = 'C:/Users/pratik/Desktop/Big Data Mining/Assignment 2/c1.txt'
-centroid_set2_path = 'C:/Users/pratik/Desktop/Big Data Mining/Assignment 2/c2.txt'
+dataset_path = 'data.txt'
+centroid_set1_path = 'c1.txt'
+centroid_set2_path = 'c2.txt'
 def kmeans(data,centroids,iterations,eucledian_distance):
     dataset = np.loadtxt(data)
     data = sc.parallelize(dataset)
